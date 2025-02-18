@@ -7,7 +7,7 @@ void main() {
 
 class LabClass05 extends StatelessWidget {
   const LabClass05({super.key});
-
+ 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

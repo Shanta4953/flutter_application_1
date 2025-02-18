@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 void main() {
   runApp(const LabClass05());
@@ -6,38 +7,34 @@ void main() {
 
 class LabClass05 extends StatelessWidget {
   const LabClass05({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Basic Flutter UI - 02",
+      title: "Basic Flutter UI-02",
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Basic Flutter UI - 02"),
-          backgroundColor: Colors.blue,
+          title: Text("Basic Flutter UI-02"),
+          backgroundColor: Colors.blue[400],
+          centerTitle: true,
         ),
-        body: Container(
-          height: double.infinity,
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.ac_unit,
-                size: 30,
-                color: Colors.black,
+        body: SingleChildScrollView(
+          scrollDirection: Axis.horizontal, 
+          child: Container(
+            height: 600,
+            //width: double.infinity,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
+              crossAxisAlignment: CrossAxisAlignment.center, 
+              children: List.generate(
+                100,
+                (index) => Icon(
+                  Iconsax.add_circle,
+                  size: index.toDouble(), 
+                  color: const Color.fromARGB(255, 21, 0, 255),
+                ),
               ),
-              Icon(
-                Icons.account_tree,
-                size: 30,
-                color: Colors.black,
-              ),
-              Icon(
-                Icons.access_alarm,
-                size: 30,
-                color: Colors.black,
-              ),
-            ],
+            ),
           ),
         ),
       ),
